@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.popup .overlay {
+		  position:fixed;
+		  top:0px;
+		  left:0px;
+		  width:100vw;
+		  height:100vh;
+		  background:rgba(0,0,0,0.7);
+		  z-index:1;
+		  display:none;
+		}
+
+		.popup .content {
+		  position:absolute;
+		  top:50%;
+		  left:50%;
+		  transform:translate(-50%,-50%) scale(0);
+		  background:#fff;
+		  width:500px;
+		  height:250px;
+		  z-index:2;
+		  text-align:center;
+		  padding:20px;
+		  box-sizing:border-box;
+		  font-family:"Open Sans",sans-serif;
+		}
+
+		.popup .close-btn {
+		  cursor:pointer;
+		  position:absolute;
+		  right:20px;
+		  top:20px;
+		  width:30px;
+		  height:30px;
+		  background:#222;
+		  color:#fff;
+		  font-size:25px;
+		  font-weight:600;
+		  line-height:30px;
+		  text-align:center;
+		  border-radius:50%;
+		}
+
+		.popup.active .overlay {
+		  display:block;
+		}
+
+		.popup.active .content {
+		  transition:all 300ms ease-in-out;
+		  transform:translate(-50%,-50%) scale(1);
+		}
+
+		button {
+		  display: inline-block;
+		  top:50%;
+		  left:50%;
+		  padding:15px;
+		  font-size:18px;
+		  border:2px solid #222;
+		  color:#222;
+		  text-transform:uppercase;
+		  font-weight:600;
+		  background:#fff;
+
+		}
+	</style>
+</head>
+<body>
+	<!-- Pop Up Content Text -->
+	<!-- About -->
+		<div class="popup" id="popup-1">
+			  <div class="overlay"></div>
+			  <div class="content">
+				    <div class="close-btn" onclick="togglePopup1()">&times;</div>
+				    <h1>Title</h1>
+				    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aspernatur laborum rem sed laudantium excepturi veritatis voluptatum architecto, dolore quaerat totam officiis nisi animi accusantium alias inventore nulla atque debitis.
+				    </p>
+			  </div>
+		</div>
+	<!-- Projects -->
+		<div class="popup" id="popup-2">
+			  <div class="overlay"></div>
+			  <div class="content">
+				    <div class="close-btn" onclick="togglePopup2()">&times;</div>
+				    <h1>Title</h1>
+				    <p>Lorem </p>
+			  </div>
+		</div>
+	<!-- Achievements -->
+		<div class="popup" id="popup-3">
+			  <div class="overlay"></div>
+			  <div class="content">
+				    <div class="close-btn" onclick="togglePopup3()">&times;</div>
+				    <h1>Title</h1>
+				    <p>Lorem </p>
+			  </div>
+		</div>
+	<!-- Contacts -->
+		<div class="popup" id="popup-4">
+			  <div class="overlay"></div>
+			  <div class="content">
+				    <div class="close-btn" onclick="togglePopup4()">&times;</div>
+				    <h1>Title</h1>
+				    <p>Lorem </p>
+			  </div>
+		</div>
+	
+	<!-- Pop Up click -->
+		<center>
+		<button onclick="togglePopup1()">About</button>
+		<button onclick="togglePopup2()">Projects</button>
+		<button onclick="togglePopup3()">Achievements</button>
+		<button onclick="togglePopup4()">contact</button>
+		<button onclick="location.href = 'https://www.facebook.com/tansin99/';" id="myButton" class="float-left submit-button" >Resume</button>
+		</center>
+		<script>
+			function togglePopup1(){
+			  document.getElementById("popup-1").classList.toggle("active");
+			}
+			function togglePopup2(){
+			  document.getElementById("popup-2").classList.toggle("active");
+			}
+			function togglePopup3(){
+			  document.getElementById("popup-3").classList.toggle("active");
+			}
+			function togglePopup4(){
+			  document.getElementById("popup-4").classList.toggle("active");
+			}
+			
+		</script>
+</body>
+</html>
